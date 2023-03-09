@@ -1,25 +1,35 @@
 "use strict";
 exports.__esModule = true;
 var claseAuto_js_1 = require("./claseAuto.js");
-var registroAutomotor_js_1 = require("./registroAutomotor.js");
-var arrayCars = [5];
-var dataBase = [[3], [3]];
-var manage = new registroAutomotor_js_1.RegistroAutomotor;
-var palio = new claseAuto_js_1.Auto('Palio', 'Fire', 1.3, 'ABC-123', 123456789, 987654321);
-var cronos = new claseAuto_js_1.Auto('Chevrolet', 'Cronos', 1.4, 'ABC-012', 123456788, 987654322);
-var citroen = new claseAuto_js_1.Auto('C3', 'Airwave', 1.4, 'ABC-001', 123456888, 987654222);
-var fiesta = new claseAuto_js_1.Auto('Ford', 'Fiesta', 1.4, 'ABC-002', 123458888, 987652222);
-var civic = new claseAuto_js_1.Auto('Honda', 'Civic', 1.8, 'ABC-003', 123458888, 987622222);
-var gol = new claseAuto_js_1.Auto('Volkswagen', 'Gol', 1.4, 'ABC-004', 123488888, 987222222);
-// // Se Añaden los autos:
-manage.addCarsToArray(arrayCars, palio);
-manage.addCarsToArray(arrayCars, cronos);
-manage.addCarsToArray(arrayCars, citroen);
-manage.addCarsToArray(arrayCars, fiesta);
-manage.addCarsToArray(arrayCars, civic);
-manage.addCarsToArray(arrayCars, gol);
-console.log(arrayCars);
-// // Consulta de Datos:
-// manage.consultDataBase('Chevrolet', dataBase);
-// manage.consultDataBase('Honda', dataBase);
-// console.log(dataBase);
+// import { RegistroAutomotor } from "./registroAutomotor.js";
+var nuevoArray = new Array(2);
+nuevoArray[0] = new Array(2);
+nuevoArray[1] = new Array(2);
+// let arrayCars: any = [];
+// const dataBase: any [] = [][];
+// const manage = new RegistroAutomotor;
+var palio = new claseAuto_js_1.Auto('Palio', 'Fire', 1.3, 'ABC-123');
+var cronos = new claseAuto_js_1.Auto('Chevrolet', 'Cronos', 1.4, 'ABC-012');
+var citroen = new claseAuto_js_1.Auto('C3', 'Airwave', 1.4, 'ABC-001');
+var fiesta = new claseAuto_js_1.Auto('Ford', 'Fiesta', 1.4, 'ABC-002');
+var civic = new claseAuto_js_1.Auto('Honda', 'Civic', 1.8, 'ABC-003');
+var gol = new claseAuto_js_1.Auto('Volkswagen', 'Gol', 1.4, 'ABC-004');
+nuevoArray[0][0] = palio;
+nuevoArray[0][1] = cronos;
+nuevoArray[0][2] = citroen;
+nuevoArray[1][0] = fiesta;
+nuevoArray[1][1] = civic;
+nuevoArray[1][2] = gol;
+function findObjectByIndex(num1, num2) {
+    for (var i = 0; i <= 2; i++) {
+        for (var j = 0; j <= 2; j++) {
+            if (i == num1 && j == num2) {
+                console.log(nuevoArray[i][j]);
+                return nuevoArray[i][j];
+            }
+        }
+    }
+}
+findObjectByIndex(0, 0);
+findObjectByIndex(1, 0);
+findObjectByIndex(1, 2);

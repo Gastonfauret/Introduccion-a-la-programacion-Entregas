@@ -1,41 +1,43 @@
 import {Auto} from "./claseAuto.js";
-import { RegistroAutomotor } from "./registroAutomotor.js";
+// import { RegistroAutomotor } from "./registroAutomotor.js";
 
-let arrayCars = [5];
-const dataBase: any = [[3],[3]];
+var nuevoArray = new Array(2);
+nuevoArray[0] = new Array(2);
+nuevoArray[1] = new Array(2);
 
-const manage = new RegistroAutomotor;
+// let arrayCars: any = [];
+// const dataBase: any [] = [][];
 
-const palio: Auto = new Auto('Palio', 'Fire', 1.3, 'ABC-123', 123456789, 987654321);
-const cronos: Auto = new Auto ('Chevrolet', 'Cronos', 1.4, 'ABC-012', 123456788, 987654322);
-const citroen: Auto = new Auto ('C3', 'Airwave', 1.4, 'ABC-001', 123456888, 987654222);
-const fiesta: Auto = new Auto ('Ford', 'Fiesta', 1.4, 'ABC-002', 123458888, 987652222);
-const civic: Auto = new Auto ('Honda', 'Civic', 1.8, 'ABC-003', 123458888, 987622222);
-const gol: Auto = new Auto ('Volkswagen', 'Gol', 1.4, 'ABC-004', 123488888, 987222222);
+// const manage = new RegistroAutomotor;
 
+const palio: Auto = new Auto('Palio', 'Fire', 1.3, 'ABC-123');
+const cronos: Auto = new Auto ('Chevrolet', 'Cronos', 1.4, 'ABC-012');
+const citroen: Auto = new Auto ('C3', 'Airwave', 1.4, 'ABC-001');
+const fiesta: Auto = new Auto ('Ford', 'Fiesta', 1.4, 'ABC-002');
+const civic: Auto = new Auto ('Honda', 'Civic', 1.8, 'ABC-003');
+const gol: Auto = new Auto ('Volkswagen', 'Gol', 1.4, 'ABC-004');
 
-// // Se Añaden los autos:
-manage.addCarsToArray(arrayCars, palio);
-manage.addCarsToArray(arrayCars, cronos);
-manage.addCarsToArray(arrayCars, citroen)
-manage.addCarsToArray(arrayCars, fiesta);
-manage.addCarsToArray(arrayCars, civic);
-manage.addCarsToArray(arrayCars, gol);
+nuevoArray[0][0] = palio;
+nuevoArray[0][1] = cronos;
+nuevoArray[0][2] = citroen;
+nuevoArray[1][0] = fiesta;
+nuevoArray[1][1] = civic;
+nuevoArray[1][2] = gol;
 
-console.log(arrayCars);
+function findObjectByIndex (num1: number, num2: number) {
+    for(let i: number = 0; i <= 2; i++) {
+        for(let j: number = 0; j <= 2; j++) {
+            if (i == num1 && j == num2) {
+                console.log(nuevoArray[i][j])
+                return nuevoArray[i][j]
+            } 
+        }
+    }
+}
 
-
-// // Consulta de Datos:
-// manage.consultDataBase('Chevrolet', dataBase);
-// manage.consultDataBase('Honda', dataBase);
-
-// console.log(dataBase);
-
-
-
-
-
-
+findObjectByIndex(0, 0);
+findObjectByIndex(1, 0);
+findObjectByIndex(1, 2);
 
 
 
